@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CheckboxControlValueAccessor } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { SpotifyService } from 'src/app/spotify.service';
 
@@ -25,10 +26,12 @@ export class AlbumComponent implements OnInit{
     this._spotifyService.getAllTracks(this.albumId).subscribe((data)=>{
       this.tracks = data.items;
     })
-
-
     
   }
+  addtofavourites(item: any){
+    this._spotifyService.addtofav(item);
+  }
+
 
 
 }

@@ -25,15 +25,14 @@
 </section>
 <div class="card-body">
     <div class="row">
-        <div class="col-md-4" *ngFor="let track of tracks">
+        <div class="col-md-4" *ngFor="let track of tracks" >
             <div class="card-mt-3">
                 <div class="card-body bg-secondary text-white text-center">
                     <p class=""><b>{{track.name}}</b></p>
                     <audio controls>
                         <source [src]="track.preview_url">
                     </audio>
-                    <button type="button" class="btn btn-secondary">Add to Favourites</button>
-                    
+                    <button class="btn btn-primary" (click)=addtofavourites(track)>Add to Favourites</button>
                 </div>
             </div>
 

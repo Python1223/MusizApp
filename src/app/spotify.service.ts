@@ -1,20 +1,23 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpotifyService {
-    private authorizationKey= "Bearer BQAJR7kcBEO7QhYq6-c3MUOxBJPgRkZE_jG3pPyIkm65nk_uKzQM7AyeCu_JQcf-NgGINxdBdGdn03DvwYlfzMwZC5SxxtQAFgX2ZMFIqADoyr0W4tva0RqVHNFNMP6KG3xf0Z0pCuq48JXd5NvGdMwSS-QZ1bqOQaQIj9oG9MHnRd6apHhPoEJA1kjZ5nxJR9o"
-  
-     httpOptions= {
+    private authorizationKey= "Bearer BQAuaPJXQzZKAesOvS21zA-7jRhPKKW5euCJoALS0kqwGw5wk1N1cWUnU1BvKZlR5qqveceU1UHzPYe5cViehH2scu8ap7JEDMrSyI7zk46U6ChIJl5c5d566Tx8ymODs4YCjvV9uova-6C1fG-HaCb5MAH_UXb8PifOGPM5UeGvdvSSQPfkdnw4o53JPfvVLrI"
+    httpOptions= {
     headers: new HttpHeaders({
       'Accept': 'application/json',
       'Content-Type': 'application/json',
       'Authorization': this.authorizationKey
     })
   };
+  public favItemList : any =[]
+  public productList = new BehaviorSubject<any>([]);
+
   constructor(private _httpClient:HttpClient) { }
 
   
@@ -44,6 +47,16 @@ export class SpotifyService {
     let tracksURL= `https://api.spotify.com/v1/albums/${albumId}/tracks`;
     return this._httpClient.get<any>(tracksURL,this.httpOptions)
 
+  }
+  getProducts(){
+    return this.productList.asObservable();
+  }
+
+  addtofav(product : any){
+    this.favItemList.push(product);
+    this.productList.next(this.favItemList);
+    console.log(this.favItemList)
+    
   }
 
 }

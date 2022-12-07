@@ -14,7 +14,8 @@ import { AlbumComponent } from './components/album/album.component';
 const routes: Routes = [
   {path : '' ,component: HomeComponent ,pathMatch: 'full'},
   {path : 'artists/:id' ,component: ArtistComponent ,pathMatch: 'full'},
-  {path : 'albums/:id' ,component:AlbumComponent ,pathMatch: 'full'}
+  {path : 'albums/:id' ,component:AlbumComponent ,pathMatch: 'full'},
+  {path : 'about' ,component:AboutComponent}
 ];
 
 @NgModule({
