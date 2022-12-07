@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'musizApp';
+
+  constructor(){
+    localStorage.setItem('status','notloggedin')
+  }
+
 }

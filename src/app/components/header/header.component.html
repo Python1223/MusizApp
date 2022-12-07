@@ -1,12 +1,18 @@
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
         <b>Music Player</b>
-        
-    <span>
-        <button type="button" class="btn btn-outline-light me-2">Login</button>
-        <button type="button" class="btn btn-warning">Sign Up</button>
-        <button routerLink="about" type="button" class="btn btn-warning">Favourites</button>
-    </span>
-    </div>
-  </nav>
-  
+
+
+  <span *ngIf="ls.getItem('status')!=='loggedin' then trueBlock else falseBlock"></span>
+  <ng-template #trueBlock>
+    <button type="button" class="btn btn-outline-light me-2"  (click)="LoginHandler()">Login</button>
+  </ng-template>
+ 
+   <ng-template #falseBlock>
+    <button routerLink="home" class="btn btn-warning">Back to Search</button>
+    <button routerLink="favourites" type="button" class="btn btn-warning">Favourites</button>
+    <button type="button" class="btn btn-warning" (click)="LogoutHandler()">Logout</button>
+    
+ </ng-template>
+</div>
+</nav>

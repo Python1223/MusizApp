@@ -1,0 +1,18 @@
+        <h3 class="hd">WELCOME TO YOUR FAVOURITES SECTION</h3>
+            
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4" *ngFor="let item of tracks; let i = index" >
+                        <div class="card-mt-3" style="padding: 4px;">
+                            <div class="card-body text-white text-center" style="border: 3px solid black; border-radius: 6%; background-color: royalblue;">
+                                <h5>{{ i+1 }}</h5>
+                                <p class="lead" style="color:black"><b>{{item.name}}</b></p>
+                                <audio controls>
+                                    <source [src]="item.preview_url">
+                                </audio>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>

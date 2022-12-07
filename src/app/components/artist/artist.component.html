@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="card">
+                <div class="card" style="background-color:yellowgreen;">
                     <div class="card-header bg-primary text-white">
-                        <h2>{{artist.name}}</h2>
+                        <h2 >{{artist.name}}</h2>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -12,15 +12,30 @@
                                 <img [src]="artist.images[0].url" class="img-fluid img-thumbnail">
                             </div>
                             <div class="col-md-9">
-                                <h4 class="display-3 text-primary"><a routerLink="/artists/{{artist.id}}">{{artist.name}}</a>
+                                <h4 class="display-3 text-primary"><a routerLink="/artists/{{artist.id}}" style="text-decoration:none;">{{artist.name}}</a>
                             </h4>
                                 <p class="h2">Followers : {{artist.followers.total | number}}</p>
                                 <p class="h5"> Genres :
-                                    <span *ngFor="let genre of artist.genres"><i>{{genre}}</i></span>
+                                    <span class="btn btn-info" style="margin:3%" *ngFor="let genre of artist.genres"><i>{{genre }}</i></span>
                                 </p>
                             </div>
                         </div>
                     </div>
+                    <!-- <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3" *ngFor="let album of albums">
+                                <div class="card h-100" style="padding:2%">
+                                    <div class="card-body bg-secondary text-white text-center">
+                                        <img [src]="album.images[0].url" class="img-fluid img-thumbnail">
+                                        <p class="mt-3">{{album.name}}</p>
+                                        <a routerLink="/albums/{{album.id}}" class="btn btn-outline-white">View Album</a>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+
     
                     </div>
                     
@@ -30,11 +45,11 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-3" *ngFor="let album of albums">
-                <div class="card mt-3">
+                <div class="card h-100">
                     <div class="card-body bg-secondary text-white text-center">
                         <img [src]="album.images[0].url" class="img-fluid img-thumbnail">
-                        <h3 class="mt-3">{{album.name}}</h3>
-                        <a routerLink="/albums/{{album.id}}" class="btn btn-outline-white">View Album</a>  
+                        <p class="mt-3">{{album.name}}</p>
+                        <a routerLink="/albums/{{album.id}}" class="btn btn-outline-white" style="position:absolute; bottom:0px;">View Album</a>  
                     </div>
                 </div>
             </div>

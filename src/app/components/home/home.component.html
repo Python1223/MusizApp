@@ -1,16 +1,7 @@
-<section class="">
-    <div class="container">
-    <div class="row">
-    <div class="col-md-4">
-        <!-- <form>
-            <div class="form-group">
-                <input  type="search" [(ngModel)]="searchQuery" class="form-control" (keyup)="searchArtists()" placeholder="Search an artist">
-            </div>
-        </form> -->
-        <input  type="search" [(ngModel)]="searchQuery" (keyup)="searchArtists()" placeholder="Search an artist">
+<section>
+    <div class="search-hero">
+        <input  class="fl" type="search" [(ngModel)]="searchQuery" (keyup)="searchArtists()" placeholder="Search an artist">
 
-    </div>
-    </div>
     </div>
     
 </section>
@@ -18,7 +9,7 @@
     <div class="container">
         <div class="row"  *ngFor="let artist of artists">
             <div class="col">
-                <div class="card">
+                <div class="card" style="background-color:lightpink">
                     <div class="card-header bg-primary text-white">
                         <h2>{{artist.name}}</h2>
                     </div>
@@ -28,12 +19,11 @@
                                 <img [src]="artist.images[0].url" class="img-fluid img-thumbnail">
                             </div>
                             <div class="col-md-9">
-                                <h4 class="display-3 text-primary"><a routerLink="/artists/{{artist.id}}">{{artist.name}}</a>
+                                <h4 class="display-3 text-primary"><a routerLink="/artists/{{artist.id}}" style="text-decoration:none;">{{artist.name}}</a>
                             </h4>
-                                <p class="h2">Followers : {{artist.followers.total | number}}</p>
-                                <p class="h5"> Genres :
-                                    <span class="badge badge-success mr-2" *ngFor="let genre of artist.genres">{{genre}}</span>
-                                </p>
+                            <p class="h5"> Genres :
+                                <span class="btn btn-info" style="margin:3%" *ngFor="let genre of artist.genres"><i>{{genre }}</i></span>
+                            </p>
 
                             </div>
                         </div>

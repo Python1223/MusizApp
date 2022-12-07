@@ -1,8 +1,15 @@
-form 
-    .form-control{
-        
-        box-shadow: 0 10px 40px 0 #B0C1D9;
-        margin-top: 15px;
-
-}
-
+.search-hero {
+    max-width: 500px;
+    padding-bottom: 50px;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .fl {
+    box-shadow: 0 10px 40px 0 #B0C1D9;
+    margin: 10%;
+  }
+  .fl::placeholder  {
+    font-family: Helvetica, sans-serif;
+  }

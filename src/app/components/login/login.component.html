@@ -1,0 +1,20 @@
+<div class="log">
+    <form [formGroup]="loginForm" (ngSubmit)="SignInHandler()">
+        <h3 style="text-align:center">Login Form :</h3>
+  Username  <input type="text"  formControlName="username"><br> 
+  <div>
+    <span style="color:blue;" *ngIf="user?.touched && user?.hasError('required')">Username is Mandatory</span><br>
+    <span style="color:blue;" *ngIf="user?.touched && user?.hasError('minlength')">Length must be valid</span>
+    <span></span>
+  </div>
+  Password   <input type="text" formControlName="password"> <br>
+  <span style="color:blue;" *ngIf="loginForm?.get('password')?.touched && loginForm?.get('password')?.hasError('required')">Password is Mandatory</span><br>
+    <input type="submit" vaue="SignIn" class="btn btn-success" [disabled]="!loginForm.valid">
+    <span *ngIf="loginForm.invalid" style="color:red;">
+    Please check all data
+    </span>
+        
+  </form>
+</div>
+
+

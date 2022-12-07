@@ -2,18 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from 'src/app/spotify.service';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  selector: 'app-favourites',
+  templateUrl: './favourites.component.html',
+  styleUrls: ['./favourites.component.scss']
 })
-export class AboutComponent implements OnInit{
-  public products : any;
+export class FavouritesComponent implements OnInit{
+  public tracks : any;
 
   constructor(private _spotifyService:SpotifyService){}
   ngOnInit(): void {
     this._spotifyService.getProducts()
     .subscribe(res=>{
-      this.products = res;
+      this.tracks = res;
     })
   
 }
