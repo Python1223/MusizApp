@@ -29,6 +29,7 @@ export class AlbumComponent implements OnInit{
     
   }
   addtofavourites(item: any){
+
     this._spotifyService.addtofav(item);
   }
 

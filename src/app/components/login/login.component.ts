@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 })
   public get user(){return this.loginForm.get('username');}
   
-  constructor() {}
+  constructor(private router:Router) {}
 
   ngOnInit(): void {
   }
@@ -26,7 +26,11 @@ SignInHandler(){
    this.username = this.loginForm.get('username')?.value;
    this.password = this.loginForm.get('password')?.value;
    if(this.username==='ritt' && this.password==='rit@123') 
+   {
    localStorage.setItem('status','loggedin')
+   alert("Hey Ritt ,you logged in!!!");
+   this.router.navigate(['home'])
+   }
    else
    localStorage.setItem('status','notloggedin')
   

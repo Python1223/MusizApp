@@ -1,6 +1,6 @@
 <section>
     <div class="search-hero">
-        <input  class="fl" type="search" [(ngModel)]="searchQuery" (keyup)="searchArtists()" placeholder="Search an artist">
+        <input  class="fl" type="search" [(ngModel)]="searchQuery" (keyup)="searchArtists()" placeholder="Search an artist!">
 
     </div>
     
@@ -33,4 +33,22 @@
 
         </div>
     </div>
+</section>
+<section>
+<div class="card-body">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let track of tracklist" >
+            <div class="card-mt-3">
+                <div class="flex-container" style="border:2px solid red; border-radius:5% ;margin:0px; background-color:#ff9100d7;">
+                    <p class="lead" style="color:black ;background-color: #9c0970f1;width: 20vw;" ><b>{{track.name}}</b></p>
+                    <audio controls>
+                        <source [src]="track.preview_url">
+                    </audio>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 </section>

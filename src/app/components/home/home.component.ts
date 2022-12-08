@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   public searchQuery:any;
   //searchQuery?:string|null| undefined;
   public artists:any;
+  public tracklist:any;
   
 
   constructor(private _spotifyService:SpotifyService){
@@ -18,6 +19,9 @@ export class HomeComponent implements OnInit {
        
   }
   ngOnInit(): void {
+    this._spotifyService.getHomeTrack().subscribe((res)=>{
+      this.tracklist=res.items;
+    })
     
   }
   searchArtists(){

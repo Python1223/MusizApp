@@ -18,7 +18,7 @@ const routes: Routes = [
   {path : 'artists/:id' ,component: ArtistComponent ,pathMatch: 'full'},
   {path : 'albums/:id' ,component:AlbumComponent ,pathMatch: 'full'},
   {path : 'favourites' ,component:FavouritesComponent},
-  {path : 'home',component: HomeComponent ,pathMatch: 'full'}
+  {path : 'home',component: HomeComponent ,pathMatch: 'full'},
   
   //  {path : '',component: HomeComponent ,pathMatch: 'full'}
 ];

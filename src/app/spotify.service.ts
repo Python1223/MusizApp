@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SpotifyService {
-    private authorizationKey= "Bearer BQDaOJNFfDa4gGeLEoBEWFVPNVz0ZxnRoHQGhxmeeq_dVuBlG8jF82UVonk4WSTkoFVfTmHxHFVdskvPVMywrhsnS7nY4OehyKK_uo3zF7jK3g2WCAG2tCn86sqpQe0-jIHpmxAd-S7uEJA17q6vIWwh5N3Rrk2YYVyEFThK_pxAXkHcQRJXTR587_bmGSo46yU"
+    private authorizationKey= "Bearer BQBA0xGq9eo0GdTWXPcrX15hE1FTa-ePln9NTNygP6rHkWj8NzXLNVKli8_NcDSiMuTgr_FWmRKtwn1V8Ob5s9QznGsoerwsir_ZNlVsE_PEIOOMCB7np5aqmFgsoOAQcSWFsH0VVeJ0G91bpd--o_cxjeA2zZ3fL-Q93Df-1QUkbGkk1dDiTfF5xNHo84zA_aY"
     httpOptions= {
     headers: new HttpHeaders({
       'Accept': 'application/json',
@@ -48,11 +48,19 @@ export class SpotifyService {
     return this._httpClient.get<any>(tracksURL,this.httpOptions)
 
   }
+  getHomeTrack():Observable<any>{
+    let url=`https://api.spotify.com/v1/albums/5tWIpECzXPOBGMCKindcd3/tracks`
+      return this._httpClient.get<any>(url,this.httpOptions)
+      //.pipe(map((res:any)=>{
+    // //   return res;
+    // // }))
+  }
   getProducts(){
     return this.trackList.asObservable();
   }
 
   addtofav(product : any){
+    
     this.favItemList.push(product);
     this.trackList.next(this.favItemList);
     

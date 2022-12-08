@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from 'src/app/spotify.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-favourites',
@@ -9,7 +10,7 @@ import { SpotifyService } from 'src/app/spotify.service';
 export class FavouritesComponent implements OnInit{
   public tracks : any;
 
-  constructor(private _spotifyService:SpotifyService){}
+  constructor(private _spotifyService:SpotifyService ,private _activatedRoute:ActivatedRoute){}
   ngOnInit(): void {
     this._spotifyService.getProducts()
     .subscribe(res=>{

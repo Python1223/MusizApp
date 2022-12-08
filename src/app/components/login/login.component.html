@@ -10,6 +10,7 @@
   Password   <input type="text" formControlName="password"> <br>
   <span style="color:blue;" *ngIf="loginForm?.get('password')?.touched && loginForm?.get('password')?.hasError('required')">Password is Mandatory</span><br>
     <input type="submit" vaue="SignIn" class="btn btn-success" [disabled]="!loginForm.valid">
+    <button class="btn btn-sm" routerLink="/home">Cancel</button>
     <span *ngIf="loginForm.invalid" style="color:red;">
     Please check all data
     </span>
