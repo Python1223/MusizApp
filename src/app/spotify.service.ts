@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SpotifyService {
-    private authorizationKey= "Bearer BQBLCckhQmVA6shKRUOohsL_iJ_ebOrHzx9_WFEGNrHHiTuZ2ugcl4IwUl5gIx6ipXMiS3xAVNv8_EK85rrZ4UgL7ZVKT2GPrHmZQUeO9PEHF5hWPGd27utyj3xcphODCRy2B3WEl-jeF0tILigwUwlMVmQeKB2M_rdeRY8DSARAbC8SkQNrrXgCMcFsr8HH2MQ"
+    private authorizationKey= "Bearer BQDaOJNFfDa4gGeLEoBEWFVPNVz0ZxnRoHQGhxmeeq_dVuBlG8jF82UVonk4WSTkoFVfTmHxHFVdskvPVMywrhsnS7nY4OehyKK_uo3zF7jK3g2WCAG2tCn86sqpQe0-jIHpmxAd-S7uEJA17q6vIWwh5N3Rrk2YYVyEFThK_pxAXkHcQRJXTR587_bmGSo46yU"
     httpOptions= {
     headers: new HttpHeaders({
       'Accept': 'application/json',
