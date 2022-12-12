@@ -7,7 +7,7 @@
     <span style="color:blue;" *ngIf="user?.touched && user?.hasError('minlength')">Length must be valid</span>
     <span></span>
   </div>
-  Password   <input type="text" formControlName="password"> <br>
+  Password   <input type="password" formControlName="password"> <br>
   <span style="color:blue;" *ngIf="loginForm?.get('password')?.touched && loginForm?.get('password')?.hasError('required')">Password is Mandatory</span><br>
     <input type="submit" vaue="SignIn" class="btn btn-success" [disabled]="!loginForm.valid">
     <button class="btn btn-sm" routerLink="/home">Cancel</button>

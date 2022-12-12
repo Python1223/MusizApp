@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   //searchQuery?:string|null| undefined;
   public artists:any;
   public tracklist:any;
+
   
 
   constructor(private _spotifyService:SpotifyService){

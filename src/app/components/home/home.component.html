@@ -36,6 +36,7 @@
 </section>
 <section>
 <div class="card-body">
+    <h2 style=" color:midnightblue; background-color:darkkhaki; text-align:center;">Listen to some music</h2>
     <div class="row">
         <div class="col-md-4" *ngFor="let track of tracklist" >
             <div class="card-mt-3">
@@ -44,6 +45,7 @@
                     <audio controls>
                         <source [src]="track.preview_url">
                     </audio>
+                    
                 </div>
             </div>
 

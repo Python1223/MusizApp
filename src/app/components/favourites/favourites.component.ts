@@ -18,4 +18,7 @@ export class FavouritesComponent implements OnInit{
     })
   
 }
+removeItem(item:any){
+  this._spotifyService.removeTrackItem(item);
+}
 }
